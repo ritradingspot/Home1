@@ -93,22 +93,32 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        .adsgram {
+        .adsgram, .new-button {
             position: fixed;
-            bottom: 120px;
             right: 20px;
             width: 60px;
             height: 60px;
-            background-image: url('https://i.suar.me/pv9oq/l');
             background-size: cover;
             cursor: pointer;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
         }
-        .adsgram:hover {
+
+        .adsgram:hover, .new-button:hover {
             transform: scale(1.1);
         }
+
+        .adsgram {
+            bottom: 120px;
+            background-image: url('https://i.suar.me/pv9oq/l');
+        }
+
+        .new-button {
+            bottom: 200px;
+            background-image: url('https://i.suar.me/7G7NG/l');
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -164,6 +174,8 @@
     <div class="added-points" id="added-points">+1</div>
 
     <div class="adsgram" id="adsgram"></div>
+
+    <div class="new-button" id="newButton"></div>
 
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -222,6 +234,10 @@
             modal.style.display = 'none';
         });
 
+        document.getElementById('newButton').addEventListener('click', function() {
+            window.location.href = 'https://ritradingspot.github.io/NewPage/';
+        });
+
         updatePointsDisplay();
 
         function fetchUsername() {
@@ -259,7 +275,8 @@
     </script>
 
     <div class="navbar">
-        <a href="https://ritradingspot.github.io/Home/" class="active">
+        <a
+href="https://ritradingspot.github.io/Home/" class="active">
             <i class="fas fa-home"></i>
             Home
         </a>
@@ -268,7 +285,7 @@
             Tasks
         </a>
         <a
-<a href="https://ritradingspot.github.io/Wallet/">
+href="https://ritradingspot.github.io/Wallet/">
             <i class="fas fa-wallet"></i>
             Wallet
         </a>
